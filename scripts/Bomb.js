@@ -20,13 +20,14 @@ export class Bomb extends CanvasItem {
     if (!this.exploded) {
       const { x, y } = this.position;
 
-      // this.context.beginPath();
+      this.context.beginPath();
       this.context.arc(x, y, this.radius, 0, 2 * Math.PI, false);
       this.context.fillStyle = 'green';
       this.context.fill();
       this.context.lineWidth = 2;
       this.context.strokeStyle = '#003300';
       this.context.stroke();
+      this.context.closePath();
     }
     console.log('update');
   }

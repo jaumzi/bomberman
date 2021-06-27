@@ -5,7 +5,7 @@ export class Bomberman extends CanvasItem {
   commands;
   position;
   size;
-  distanceMoviment = 0.6;
+  distanceMoviment = 1.5;
   bombs = [];
   numberOfBombForPlant = 1;
   isPlayable;
@@ -14,7 +14,7 @@ export class Bomberman extends CanvasItem {
     super();
 
     this.position = position;
-    this.size = size;
+    this.size = { h: size.h - 2, w: size.w - 2 };
     this.isPlayable = isPlayable;
     
     this.addcommands();

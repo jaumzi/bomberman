@@ -157,7 +157,7 @@ const deleteHtml = (classHtml) => {
 export class Game extends CanvasItem {
   scennario;
   players = [];
-  numberOfPlayers = 5;
+  numberOfPlayers = 4;
 
   constructor() {
     super();
@@ -167,7 +167,7 @@ export class Game extends CanvasItem {
     let playable = true;
     for (var i = 0; i < this.numberOfPlayers; i++) {
       const respawn = this.scennario.playersRespawn[i];
-      this.players.push( new Bomberman({ x: respawn.x, y: respawn.y }, undefined, playable) );
+      this.players.push( new Bomberman({ x: respawn.x, y: respawn.y }, this.scennario.sizeObjectInScennario, playable) );
 
       if(playable){
         playable = false;
